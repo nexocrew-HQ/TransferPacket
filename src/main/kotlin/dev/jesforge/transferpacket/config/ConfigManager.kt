@@ -9,7 +9,6 @@ object ConfigManager {
 
     var settings = settingsFile.loadConfig(
         SettingsData(
-            commandPermission = "transferpacket.commands.transferpacket",
             commandName = "transferpacket",
             messages = Messages(
                 successTransfer = "<green>Successfully transfer from the server!</green>"
