@@ -1,4 +1,4 @@
-package dev.xyzjesper.papertemplate.config
+package dev.jesforge.transferpacket.config
 
 interface Configurable {
     fun save()

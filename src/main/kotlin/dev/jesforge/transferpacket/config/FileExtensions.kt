@@ -1,5 +1,6 @@
-package net.crystopia.onlyup.config
+package dev.jesforge.transferpacket.config
 
+import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.File
 

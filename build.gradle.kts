@@ -1,9 +1,13 @@
+import net.minecrell.pluginyml.bukkit.BukkitPluginDescription
+import net.minecrell.pluginyml.paper.PaperPluginDescription
+
 plugins {
     kotlin("jvm") version "2.0.20-Beta1"
     id("com.gradleup.shadow") version "9.0.0-beta8"
     id("xyz.jpenilla.run-paper") version "2.3.1"
-    id("de.eldoria.plugin-yml.bukkit") version "0.7.0"
+    id("de.eldoria.plugin-yml.paper") version "0.7.0"
     kotlin("plugin.serialization") version "2.1.0"
+    id("maven-publish")
 }
 
 val mcVersion = properties["minecraftVerions"] as String
@@ -50,7 +54,6 @@ kotlin {
 
 tasks.build {
     dependsOn(tasks.shadowJar)
-    dependsOn(tasks.reobfJar)
 }
 
 tasks {
@@ -59,11 +62,36 @@ tasks {
     }
 }
 
+publishing {
+    repositories {
+        maven {
+            name = "Reposilite"
+            url = uri("https://repo.nexocrew.com/releases")
+            credentials {
+                username = System.getenv("REPOSILITE_USER") ?: System.getProperty("REPOSILITE_USER") ?: "USERNAME"
+                password = System.getenv("REPOSILITE_TOKEN") ?: System.getProperty("REPOSILITE_TOKEN") ?: "TOKEN"
+            }
+            authentication {
+                create<BasicAuthentication>("basic")
+            }
+        }
+    }
+    publications {
+        create<MavenPublication>("reposilite") {
+            from(components["java"])
+            artifactId = "transferpacket"
+            groupId = groupID
+            version = projectVersion
+        }
+    }
+}
+
 paper {
     name = projectName
     version = version
     description = projectDescription
     main = mainClass
-    authors = listOf("xyzjesper")
-    apiVersion = "1.19"
+    load = BukkitPluginDescription.PluginLoadOrder.POSTWORLD
+    authors = listOf("jesforge")
+    apiVersion = "1.21"
 }
