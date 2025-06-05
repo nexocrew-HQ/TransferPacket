@@ -22,7 +22,7 @@
 ## Developer API
 
 **Use our repo to Download the API**
-- [https://repo.crystopia.net/#/releases/dev/jesforge/transferpacket](https://repo.nexocrew.com/#/releases/dev/jesforge/transferpacket)
+- [https://repo.crystopia.net/#/releases/dev/jesforge/transferpacket](https://repo.crystopia.net/#/releases/dev/jesforge/transferpacket)
 
 ### Project Setup
 
