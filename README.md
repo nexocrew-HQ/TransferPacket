@@ -22,7 +22,7 @@
 ## Developer API
 
 **Use our repo to Download the API**
-- [https://repo.nexocrew.com/#/releases/dev/jesforge/transferpacket](https://repo.nexocrew.com/#/releases/dev/jesforge/transferpacket)
+- [https://repo.crystopia.net/#/releases/dev/jesforge/transferpacket](https://repo.nexocrew.com/#/releases/dev/jesforge/transferpacket)
 
 ### Project Setup
 
@@ -32,7 +32,7 @@ __Note: Please add the Plugin TransferPacket as depend! And check the enabled st
 ```kts
 repositories {
     mavenCentral()
-    maven("https://repo.nexocrew.com/releases")
+    maven("https://repo.crystopia.net/releases")
 }
 
 dependencies {
